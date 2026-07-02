@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Via SONER | Soneterapi, massasje og naturterapi i Lørenskog</title>
+<meta name="description" content="Soneterapi, massasje, kraniosakral terapi, Gua Sha og øreakupunktur på Rasta i Lørenskog. Åpent alle dager 10–21, time fra 600 kr. Ring eller send SMS til 973 47 942.">
+<meta property="og:title" content="Via SONER | Soneterapi og naturterapi i Lørenskog">
+<meta property="og:description" content="Veien til ro går via soner. Behandling fra 600 kr, åpent alle dager 10–21 på Rasta.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:image" content="images/utendors.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%23B25667'/><circle cx='50' cy='50' r='16' fill='%23FAF5EE'/></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Via SONER",
+  "description": "Soneterapi, massasje og naturterapi på Rasta i Lørenskog",
+  "telephone": "+4797347942",
+  "email": "audhilsen@gmail.com",
+  "url": "https://www.viasoner.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Liaveien 49A",
+    "postalCode": "1476",
+    "addressLocality": "Rasta",
+    "addressRegion": "Lørenskog",
+    "addressCountry": "NO"
+  },
+  "openingHours": "Mo-Su 10:00-21:00",
+  "priceRange": "600–1000 NOK",
+  "paymentAccepted": "Vipps, kontant"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Hva skjer i den første timen?", "acceptedAnswer": {"@type": "Answer", "text": "Timen starter med en kort samtale om hvordan du har det og hva du ønsker ut av behandlingen. Deretter setter Audhild sammen behandlingen ut fra det du kommer med den dagen. Hele samtalen skjer innenfor tiden du har bestilt."}},
+    {"@type": "Question", "name": "Hva bør jeg ha på meg?", "acceptedAnswer": {"@type": "Answer", "text": "Kom i vanlige, behagelige klær. Ved fotsoneterapi er det bare føttene som er bare, og ved massasje får du håndklær og tepper slik at du alltid er godt dekket."}},
+    {"@type": "Question", "name": "Kan jeg kombinere flere behandlinger i én time?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Du betaler for tid, ikke for behandlingstype, så flere behandlingsformer kan kombineres i samme time uten tillegg i prisen."}},
+    {"@type": "Question", "name": "Hvordan betaler jeg?", "acceptedAnswer": {"@type": "Answer", "text": "Du betaler enkelt med Vipps til 973 47 942 etter timen, eller kontant om du foretrekker det."}},
+    {"@type": "Question", "name": "Hva om jeg må avbestille?", "acceptedAnswer": {"@type": "Answer", "text": "Avbestilling er gratis frem til 24 timer før timen. Ved avbestilling samme dag eller uteblivelse belastes 300 kr."}},
+    {"@type": "Question", "name": "Er soneterapi trygt for meg?", "acceptedAnswer": {"@type": "Answer", "text": "Soneterapi og de andre behandlingene hos Via SONER er velværebehandlinger og et supplement til, aldri en erstatning for, nødvendig legehjelp. Er du usikker på egen helse, snakk med fastlegen din først."}},
+    {"@type": "Question", "name": "Selger dere gavekort?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Send en SMS eller e-post om hvem gavekortet er til og hvilket beløp du ønsker, betal med Vipps til 973 47 942, så får du gavekortet tilsendt digitalt eller klart til henting."}}
+  ]
+}
+</script>
+<style>
+/* ============ TOKENS — rosenkvarts, plomme, krem ============ */
+:root{
+  --krem:#FAF5EE;        /* ulltepper, varm grunn */
+  --krem-dyp:#F2EAE0;
+  --blush:#F5E9E5;       /* rosenkvarts-tint, flater */
+  --rose:#B25667;        /* rosenkvarts — merkevarefargen */
+  --rose-dyp:#93414F;
+  --rose-lys:#E8CCD1;
+  --plomme:#443440;      /* gardinene, dyp flate */
+  --plomme-lys:#5C4956;
+  --tekst:#3B2E35;
+  --tekst-dus:#7A6570;
+  --kant:#E6D6D0;
+  --maks:1200px;
+  --r:14px;
+  --skygge:0 16px 40px -22px rgba(59,46,53,.35);
+  --fart:260ms ease;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  font-family:'Karla',system-ui,sans-serif;
+  background:var(--krem);
+  color:var(--tekst);
+  font-size:16.5px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--rose);color:var(--krem)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2.5px solid var(--rose);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+.wrap{max-width:var(--maks);margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.08;letter-spacing:0}
+h1{font-size:clamp(2.9rem,6.6vw,5rem)}
+h2{font-size:clamp(2.1rem,3.8vw,3rem)}
+h3{font-size:1.35rem;line-height:1.2}
+h1 em,h2 em{font-style:italic;font-weight:600;color:var(--rose)}
+p{color:var(--tekst-dus)}
+strong{color:var(--tekst);font-weight:700}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--rose);
+}
+.eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--rose)}
+.lede{font-size:1.08rem;max-width:58ch}
+.sek{padding:clamp(70px,8.5vw,120px) 0}
+.sek-hode{margin-bottom:clamp(36px,4.5vw,56px);display:flex;flex-direction:column;gap:14px}
+
+/* Knapper — myke piller */
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--rose);color:var(--krem);text-decoration:none;cursor:pointer;
+  padding:15px 28px;border-radius:999px;font-weight:700;font-size:.95rem;letter-spacing:.02em;
+  border:1.5px solid var(--rose);
+  transition:background var(--fart),border-color var(--fart),transform var(--fart),box-shadow var(--fart);
+}
+.knapp:hover{background:var(--rose-dyp);border-color:var(--rose-dyp);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(147,65,79,.6)}
+.knapp.hul{background:transparent;color:var(--tekst);border-color:var(--kant)}
+.knapp.hul:hover{background:#fff;border-color:var(--rose);color:var(--rose-dyp);box-shadow:none}
+
+/* ============ TOPPLINJE + NAV ============ */
+.topplinje{background:var(--plomme);color:rgba(250,245,238,.85);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.topplinje-indre{display:flex;justify-content:space-between;gap:16px;padding:8px 0}
+.topplinje b{color:#fff;font-weight:700}
+@media (max-width:700px){.topplinje-indre span:first-child{display:none}.topplinje-indre{justify-content:center}}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,245,238,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--fart),box-shadow var(--fart)}
+.nav.skrollet{border-bottom-color:var(--kant);box-shadow:0 10px 30px -22px rgba(59,46,53,.5)}
+.nav-indre{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.merke{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.5rem;text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.merke i{font-style:normal;color:var(--rose)}
+.nav-lenker{display:flex;align-items:center;gap:clamp(14px,2.2vw,28px);list-style:none}
+.nav-lenker a{
+  text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tekst-dus);transition:color var(--fart);
+}
+.nav-lenker a:hover{color:var(--rose-dyp)}
+.nav-lenker a.nav-cta{color:var(--krem)}
+.nav-cta{padding:11px 20px;font-size:.78rem}
+.meny-knapp{display:none;background:none;border:1.5px solid var(--kant);border-radius:10px;cursor:pointer;padding:9px 10px;color:var(--tekst)}
+.meny-knapp svg{display:block}
+@media (max-width:960px){
+  .nav-lenker{
+    position:fixed;top:74px;right:0;left:0;z-index:49;
+    background:var(--krem);border-bottom:1px solid var(--kant);
+    flex-direction:column;align-items:stretch;gap:0;padding:6px clamp(20px,4vw,44px) 22px;
+    display:none;
+  }
+  .nav-lenker.open{display:flex}
+  .nav-lenker a{display:block;padding:15px 0;font-size:.9rem;border-bottom:1px solid var(--krem-dyp)}
+  .nav-lenker a.nav-cta{margin-top:16px;text-align:center;border-bottom:none}
+  .meny-knapp{display:block}
+}
+
+/* ============ HERO ============ */
+.hero{padding:clamp(44px,5.5vw,80px) 0 clamp(52px,6.5vw,88px);position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-bg video,.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.6;display:block}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(250,245,238,.82),rgba(250,245,238,.42) 45%,rgba(250,245,238,.9));
+}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,4.5vw,64px);align-items:center;position:relative;z-index:1}
+.hero h1{margin:20px 0 22px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-meta{display:flex;flex-wrap:wrap;margin-top:36px;border-top:1px solid var(--kant)}
+.hero-meta>div{padding:14px 26px 0 0;margin-right:26px}
+.hero-meta .l{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rose)}
+.hero-meta .v{font-weight:700;font-size:1rem;color:var(--tekst)}
+
+/* Plansjen — apotekerplansje i rosenkvarts */
+.plansje{
+  background:#FCF8F2;
+  border:1px solid var(--kant);
+  border-radius:var(--r);
+  box-shadow:var(--skygge);
+  position:relative;
+  animation:pust 8s ease-in-out infinite;
+}
+@keyframes pust{0%,100%{transform:scale(1)}50%{transform:scale(1.009)}}
+.plansje-hode{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:16px 22px 12px;border-bottom:1px solid var(--krem-dyp);
+}
+.plansje-hode .t{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem}
+.plansje-hode .n{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tekst-dus);font-weight:700}
+.plansje-grid{display:grid;grid-template-columns:.92fr 1.08fr;align-items:stretch}
+.fot-media{position:relative;overflow:hidden;border-right:1px solid var(--krem-dyp);min-height:380px}
+.fot-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sone-liste{list-style:none;display:flex;flex-direction:column;padding:10px 14px;justify-content:center}
+.sone-liste li{
+  display:flex;align-items:flex-start;gap:11px;cursor:pointer;
+  padding:8px 10px;border-radius:10px;
+  transition:background var(--fart),color var(--fart);
+}
+.sone-liste li:hover{background:var(--blush)}
+.sone-liste li .nr{
+  flex:none;width:23px;height:23px;border-radius:50%;border:1.5px solid var(--rose-lys);
+  display:grid;place-items:center;font-size:.66rem;font-weight:700;color:var(--tekst-dus);
+  transition:all var(--fart);margin-top:1px;
+}
+.sone-liste li b{display:block;font-size:.88rem;font-weight:700;color:var(--tekst);line-height:1.3}
+.sone-liste li small{display:block;font-size:.76rem;color:var(--tekst-dus);line-height:1.35}
+.sone-liste li.aktiv{background:var(--blush)}
+.sone-liste li.aktiv .nr{background:var(--rose);border-color:var(--rose);color:var(--krem)}
+.plansje-fot{padding:11px 22px 15px;border-top:1px solid var(--krem-dyp);font-size:.74rem;color:var(--tekst-dus);font-style:italic}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .plansje-grid{grid-template-columns:1fr}
+  .fot-media{border-right:none;border-bottom:1px solid var(--krem-dyp);min-height:0;aspect-ratio:3/4;max-height:480px}
+  .fot-video{position:absolute;inset:0}
+}
+
+/* ============ FAKTASTRIPE ============ */
+.stripe{background:var(--plomme);color:var(--krem);padding:18px 0}
+.stripe-indre{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;font-size:.88rem}
+.stripe-indre span{display:inline-flex;align-items:center;gap:10px;opacity:.92}
+.stripe-indre span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rose-lys);flex:none}
+
+/* ============ BEHANDLINGER ============ */
+.beh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.beh-kort{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform var(--fart),box-shadow var(--fart);
+}
+.beh-kort:hover{transform:translateY(-5px);box-shadow:var(--skygge)}
+.beh-bilde{aspect-ratio:4/3.05;overflow:hidden}
+.beh-bilde img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.beh-kort:hover .beh-bilde img{transform:scale(1.045)}
+.beh-tekst{padding:18px 20px 22px;display:flex;flex-direction:column;gap:7px;flex:1}
+.beh-tag{
+  align-self:flex-start;font-size:.62rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--rose-dyp);
+  background:var(--blush);padding:4px 12px;border-radius:999px;
+}
+.beh-tekst h3{font-size:1.35rem}
+.beh-tekst p{font-size:.88rem;flex:1}
+@media (max-width:1020px){.beh-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.beh-grid{grid-template-columns:1fr}}
+
+/* ============ PRISER ============ */
+.pris-sek{background:var(--blush)}
+.pris-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px}
+.pris-kort{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  padding:36px 30px;text-align:center;position:relative;
+  transition:transform var(--fart),box-shadow var(--fart);
+}
+.pris-kort:hover{transform:translateY(-4px);box-shadow:var(--skygge)}
+.pris-kort.mest{border:2px solid var(--rose)}
+.mest-tag{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--rose);color:var(--krem);font-size:.64rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;padding:5px 16px;border-radius:999px;white-space:nowrap;
+}
+.pris-tid{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tekst-dus)}
+.pris-belop{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:3.4rem;margin:10px 0 0;font-variant-numeric:tabular-nums}
+.pris-belop small{font-size:1.1rem;color:var(--tekst-dus);font-family:'Karla',sans-serif;font-weight:600}
+.pris-min{font-size:.92rem;color:var(--tekst-dus);margin-bottom:10px}
+.pris-kort p{font-size:.88rem}
+.pris-info{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.klippekort{background:var(--plomme);color:var(--krem);border-radius:var(--r);padding:30px 32px}
+.klippekort h3{color:#fff;margin-bottom:8px}
+.klippekort p{color:rgba(250,245,238,.78);font-size:.92rem}
+.klipp-rad{display:flex;gap:9px;margin-top:18px}
+.klipp{
+  width:36px;height:36px;border-radius:50%;border:1.5px dashed rgba(250,245,238,.45);
+  display:grid;place-items:center;font-size:.7rem;font-weight:700;color:rgba(250,245,238,.8);
+}
+.klipp.gratis{background:var(--rose);border:1.5px solid var(--rose);color:#fff}
+.vilkaar{background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);padding:28px 30px}
+.vilkaar h3{margin-bottom:12px}
+.vilkaar ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.vilkaar li{display:flex;gap:11px;align-items:flex-start;font-size:.88rem;color:var(--tekst-dus)}
+.vilkaar li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rose);flex:none;margin-top:8px}
+@media (max-width:900px){.pris-grid{grid-template-columns:1fr}.pris-info{grid-template-columns:1fr}}
+
+/* ============ GAVEKORT ============ */
+.gave-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(36px,5vw,68px);align-items:center}
+.voucher{
+  background:var(--plomme);color:var(--krem);border-radius:18px;
+  padding:clamp(34px,3.5vw,48px) clamp(34px,3.5vw,50px) clamp(30px,3vw,42px);
+  position:relative;box-shadow:var(--skygge);
+  max-width:520px;transform:rotate(-1.5deg);
+}
+.voucher::before{
+  content:"";position:absolute;inset:12px;border:1px dashed rgba(250,245,238,.3);border-radius:11px;pointer-events:none;
+}
+.voucher .v-topp{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px}
+.voucher .v-merke{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.3rem}
+.voucher .v-merke i{font-style:normal;color:var(--rose-lys)}
+.voucher .v-g{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--rose-lys)}
+.voucher .v-t{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(2.1rem,2.8vw,2.7rem);line-height:1.1}
+.voucher .v-u{margin-top:12px;font-size:.82rem;color:rgba(250,245,238,.72)}
+.voucher .segl{
+  position:absolute;right:26px;bottom:24px;width:54px;height:54px;border-radius:50%;
+  background:var(--rose);display:grid;place-items:center;
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.15rem;color:var(--krem);
+  box-shadow:0 8px 20px -8px rgba(0,0,0,.4);
+}
+.gave-steg{list-style:none;display:flex;flex-direction:column;margin:26px 0 30px}
+.gave-steg li{display:flex;gap:16px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--kant)}
+.gave-steg li:first-child{border-top:1px solid var(--kant)}
+.gave-steg .s-nr{
+  flex:none;width:32px;height:32px;border-radius:50%;background:var(--rose);color:var(--krem);
+  display:grid;place-items:center;font-weight:700;font-size:.85rem;
+}
+.gave-steg h3{font-size:1.2rem;margin-bottom:1px}
+.gave-steg p{font-size:.88rem}
+@media (max-width:900px){.gave-grid{grid-template-columns:1fr}.voucher{margin:0 auto}}
+
+/* ============ TERAPEUTEN ============ */
+.om-sek{background:var(--blush)}
+.om-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:clamp(36px,5vw,70px);align-items:start}
+.om-bilde{position:relative}
+.om-bilde::before{
+  content:"";position:absolute;top:-24px;left:-24px;width:130px;height:130px;border-radius:50%;
+  background:var(--rose-lys);opacity:.55;z-index:0;
+}
+.om-bilde img{border-radius:var(--r);box-shadow:var(--skygge);position:relative;z-index:1}
+.om-sitat{
+  margin:24px 0 0;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:1.45rem;line-height:1.35;color:var(--plomme);
+  padding-left:20px;border-left:3px solid var(--rose);
+}
+.om-tekst h2{margin:14px 0 18px}
+.om-tekst>p{margin-bottom:15px}
+.tidslinje{margin-top:34px;position:relative;padding-left:28px}
+.tidslinje::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1.5px;background:var(--rose-lys)}
+.tl-rad{position:relative;padding:0 0 19px}
+.tl-rad:last-child{padding-bottom:0}
+.tl-rad::before{
+  content:"";position:absolute;left:-28px;top:7px;width:11px;height:11px;border-radius:50%;
+  background:var(--blush);border:2.5px solid var(--rose);
+}
+.tl-aar{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--rose-dyp)}
+.tl-rad h3{font-size:1.15rem;margin:2px 0}
+.tl-rad p{font-size:.84rem;margin:0}
+@media (max-width:900px){.om-grid{grid-template-columns:1fr}.om-bilde{max-width:430px}}
+
+/* ============ NATURTERAPI ============ */
+.natur{background:var(--plomme);color:var(--krem);position:relative;overflow:hidden}
+.natur::before{
+  content:"";position:absolute;top:-180px;right:-140px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(178,86,103,.22),rgba(178,86,103,0) 68%);pointer-events:none;
+}
+.natur-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,68px);align-items:center;position:relative}
+.natur .eyebrow{color:var(--rose-lys)}
+.natur .eyebrow::before{background:var(--rose-lys)}
+.natur h2{color:#fff;margin:14px 0 18px}
+.natur h2 em{color:var(--rose-lys)}
+.natur p{color:rgba(250,245,238,.82);margin-bottom:14px}
+.natur-fakta{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0 30px}
+.natur-fakta li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:rgba(250,245,238,.88)}
+.natur-fakta li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rose-lys);flex:none;margin-top:8px}
+.natur img,.natur-video{border-radius:var(--r);box-shadow:0 26px 60px -22px rgba(0,0,0,.55);width:100%;height:auto;display:block}
+.natur .knapp{background:var(--krem);color:var(--plomme);border-color:var(--krem)}
+.natur .knapp:hover{background:#fff;border-color:#fff;box-shadow:0 12px 26px -12px rgba(0,0,0,.45)}
+@media (max-width:900px){.natur-grid{grid-template-columns:1fr}}
+
+/* ============ VIRKNINGER ============ */
+.virk-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:20px;align-items:stretch}
+.virk-art{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;margin:0;
+}
+.virk-art img{width:100%;height:100%;object-fit:cover;flex:1}
+.virk-art figcaption{
+  padding:11px 18px;border-top:1px solid var(--krem-dyp);
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--tekst-dus);
+  display:flex;justify-content:space-between;gap:10px;
+}
+.virk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:900px){.virk-layout{grid-template-columns:1fr}.virk-art{max-height:460px}}
+.virk{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  padding:26px 26px 28px;transition:transform var(--fart),box-shadow var(--fart);
+}
+.virk:hover{transform:translateY(-4px);box-shadow:var(--skygge)}
+.virk .dot{
+  width:38px;height:38px;border-radius:50%;background:var(--blush);
+  display:grid;place-items:center;color:var(--rose-dyp);font-weight:700;font-size:.8rem;
+  margin-bottom:12px;
+}
+.virk h3{font-size:1.25rem;margin-bottom:5px}
+.virk p{font-size:.88rem}
+.forbehold{
+  margin-top:26px;background:var(--krem-dyp);border:1px solid var(--kant);border-radius:var(--r);
+  padding:17px 22px;font-size:.85rem;color:var(--tekst-dus);display:flex;gap:12px;align-items:flex-start;
+}
+.forbehold::before{
+  content:"i";flex:none;width:22px;height:22px;border-radius:50%;background:var(--plomme);color:var(--krem);
+  display:grid;place-items:center;font-weight:700;font-size:.75rem;font-style:italic;font-family:'Cormorant Garamond',serif;
+}
+@media (max-width:900px){.virk-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.virk-grid{grid-template-columns:1fr}}
+
+/* ============ FAQ ============ */
+.faq-sek{background:var(--blush)}
+.faq-liste{max-width:820px;display:flex;flex-direction:column;gap:12px}
+.faq{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  overflow:hidden;transition:box-shadow var(--fart);
+}
+.faq[open]{box-shadow:var(--skygge)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:19px 24px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-weight:700;font-size:1rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pluss{
+  flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--rose-lys);
+  display:grid;place-items:center;color:var(--rose-dyp);
+  transition:transform var(--fart),background var(--fart),border-color var(--fart),color var(--fart);
+}
+.faq[open] summary .pluss{transform:rotate(45deg);background:var(--rose);border-color:var(--rose);color:var(--krem)}
+.faq .svar{padding:0 24px 22px;font-size:.93rem;max-width:64ch}
+
+/* ============ KONTAKT ============ */
+.kontakt-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:stretch}
+.kontakt-kort{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  padding:clamp(22px,2.8vw,34px);display:flex;flex-direction:column;
+}
+.k-rad{display:flex;gap:16px;padding:15px 10px;border-bottom:1px solid var(--krem-dyp);text-decoration:none;border-radius:10px;transition:background var(--fart);align-items:flex-start;flex:1}
+.k-rad:last-of-type{border-bottom:none}
+a.k-rad:hover{background:var(--blush)}
+.k-rad .dot{width:42px;height:42px;flex:none;border-radius:50%;background:var(--blush);display:grid;place-items:center;color:var(--rose-dyp)}
+.k-rad .l{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tekst-dus)}
+.k-rad .v{font-weight:700;font-size:1.05rem;color:var(--tekst)}
+.k-rad .u{font-size:.84rem;color:var(--tekst-dus)}
+.kart{border-radius:var(--r);overflow:hidden;border:1px solid var(--kant);min-height:430px;box-shadow:var(--skygge)}
+.kart iframe{width:100%;height:100%;border:0;display:block;filter:sepia(.14) saturate(.82)}
+@media (max-width:900px){.kontakt-grid{grid-template-columns:1fr}.kart{min-height:320px}}
+
+/* ============ SLUTT-CTA + FOOTER ============ */
+.slutt{background:var(--rose);color:var(--krem);text-align:center;padding:clamp(64px,7.5vw,100px) 0}
+.slutt h2{color:#fff;max-width:20ch;margin:0 auto 14px}
+.slutt h2 em{color:var(--rose-lys)}
+.slutt p{color:rgba(250,245,238,.88);max-width:52ch;margin:0 auto 30px}
+.slutt .knapp{background:var(--krem);color:var(--rose-dyp);border-color:var(--krem);font-size:1.05rem;padding:17px 34px}
+.slutt .knapp:hover{background:#fff;border-color:#fff;box-shadow:0 14px 32px -12px rgba(0,0,0,.35)}
+.slutt .u{margin-top:18px;font-size:.9rem;color:rgba(250,245,238,.8)}
+.slutt .u a{color:#fff}
+
+.footer{background:var(--plomme);color:var(--krem);padding:54px 0 40px;font-size:.9rem}
+.footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-start}
+.footer .merke{color:#fff}
+.footer .merke i{color:var(--rose-lys)}
+.footer p{color:rgba(250,245,238,.65);max-width:42ch;margin-top:10px}
+.footer .l{font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.5);display:block;margin-bottom:10px}
+.footer-lenker{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-lenker a{text-decoration:none;color:rgba(250,245,238,.85);transition:color var(--fart)}
+.footer-lenker a:hover{color:var(--rose-lys)}
+.footer-bunn{margin-top:38px;padding-top:20px;border-top:1px solid rgba(250,245,238,.16);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.78rem;color:rgba(250,245,238,.5)}
+</style>
+</head>
+<body>
+
+<!-- ============ TOPPLINJE ============ -->
+<div class="topplinje">
+  <div class="wrap topplinje-indre">
+    <span>Liaveien 49A, Rasta — Lørenskog</span>
+    <span>Alle dager 10–21 · Vipps <b>973 47 942</b></span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-indre">
+    <a class="merke" href="#topp">Via SONER<i>.</i></a>
+    <nav aria-label="Hovedmeny">
+      <ul class="nav-lenker" id="navLenker">
+        <li><a href="#behandlinger">Behandlinger</a></li>
+        <li><a href="#priser">Priser</a></li>
+        <li><a href="#gavekort">Gavekort</a></li>
+        <li><a href="#terapeuten">Terapeuten</a></li>
+        <li><a href="#naturterapi">Naturterapi</a></li>
+        <li><a href="#sporsmal">Spørsmål</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a class="knapp nav-cta" href="tel:+4797347942">Bestill time</a></li>
+      </ul>
+    </nav>
+    <button class="meny-knapp" id="menyKnapp" aria-label="Åpne meny" aria-expanded="false">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="topp">
+  <div class="hero-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="images/hero-bg.jpg">
+      <source src="media/hero-bg.mp4" type="video/mp4">
+      <img src="images/hero-bg.jpg" alt="">
+    </video>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Soneterapi &amp; naturterapi · Rasta i Lørenskog</span>
+      <h1>Veien til ro går <em>via soner</em>.</h1>
+      <p class="lede">Kroppen er kartlagt i soner, og hver sone kan møtes med rolige hender. Hos Audhild på Rasta får du soneterapi, massasje og naturterapi i trygge omgivelser — alle dager fra 10 til 21.</p>
+      <div class="hero-cta">
+        <a class="knapp" href="tel:+4797347942">Ring 973 47 942</a>
+        <a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20time%20hos%20Via%20SONER.">Send SMS</a>
+      </div>
+      <div class="hero-meta">
+        <div><span class="l">Åpent</span><br><span class="v">Alle dager 10–21</span></div>
+        <div><span class="l">Pris</span><br><span class="v">Fra 600 kr</span></div>
+        <div><span class="l">Sted</span><br><span class="v">Rasta, 15 min fra Oslo</span></div>
+      </div>
+    </div>
+
+    <!-- Plansje 01 — interaktiv fotsone-plansje -->
+    <div class="plansje" aria-label="Forenklet plansje over fotens soner">
+      <div class="plansje-hode">
+        <span class="t">Fotens soner</span>
+        <span class="n">Plansje № 01</span>
+      </div>
+      <div class="plansje-grid">
+        <div class="fot-media">
+          <video class="fot-video" autoplay muted loop playsinline poster="images/fot-art.jpg" aria-label="Håndtegnet akvarellplansje over fotens seks soner">
+            <source src="media/fot-art.mp4" type="video/mp4">
+            <img src="images/fot-art.jpg" alt="Håndtegnet akvarellplansje over fotens seks soner">
+          </video>
+        </div>
+        <ol class="sone-liste" id="soneListe">
+          <li class="aktiv"><span class="nr">1</span><div><b>Hode &amp; sanser</b><small>tærne speiler hode og bihuler</small></div></li>
+          <li><span class="nr">2</span><div><b>Pust &amp; hjerte</b><small>fotballen, brystets sone</small></div></li>
+          <li><span class="nr">3</span><div><b>Ryggraden</b><small>langs fotens innside</small></div></li>
+          <li><span class="nr">4</span><div><b>Fordøyelsen</b><small>midtfotens soner</small></div></li>
+          <li><span class="nr">5</span><div><b>Bekken &amp; hofter</b><small>hælens område</small></div></li>
+          <li><span class="nr">6</span><div><b>Ro &amp; balanse</b><small>solar plexus, der pusten senker seg</small></div></li>
+        </ol>
+      </div>
+      <p class="plansje-fot">Forenklet fremstilling. I behandlingen møtes hele foten, i ditt tempo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAKTASTRIPE ============ -->
+<div class="stripe">
+  <div class="wrap stripe-indre">
+    <span>Åpent alle dager 10–21</span>
+    <span>Axelsons-utdannet, i praksis siden 2013</span>
+    <span>Rasta i Lørenskog, 15 min fra Oslo</span>
+    <span>Betal med Vipps til 973 47 942</span>
+  </div>
+</div>
+
+<!-- ============ 01 BEHANDLINGER ============ -->
+<section class="sek" id="behandlinger">
+  <div class="wrap">
+    <div class="sek-hode">
+      <span class="eyebrow">01 · Behandlinger</span>
+      <h2>Åtte veier inn til den <em>samme roen</em></h2>
+      <p class="lede">Alle behandlinger tilpasses deg og kan kombineres i samme time. Er du usikker på hva som passer, finner dere ut av det sammen i starten av timen.</p>
+    </div>
+    <div class="beh-grid">
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/fotsoneterapi.jpg" alt="Fotsoneterapi, tomler som presser mot fotsålen" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Klassikeren</span><h3>Fotsoneterapi</h3><p>Rolige, faste trykk på fotens soner. Mange kjenner at skuldrene senker seg allerede etter få minutter.</p></div>
+      </article>
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/ansiktsoneterapi.jpg" alt="Ansiktsoneterapi" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Mild &amp; dyp</span><h3>Ansiktsoneterapi</h3><p>Lette berøringer av ansiktets soner. En stille behandling som ofte gir en følelse av klarhet og hvile.</p></div>
+      </article>
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/massasje.jpg" alt="Velværemassasje av rygg" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Muskler</span><h3>Velværemassasje</h3><p>Klassisk massasje for stive skuldre, nakke og rygg. Trykket tilpasses fra mykt til fast underveis.</p></div>
+      </article>
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/kraniosakral.jpg" alt="Kraniosakral terapi ved hodet" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Nervesystemet</span><h3>Kraniosakral terapi</h3><p>Svært lette holdegrep om hode, nakke og korsrygg. For deg som ønsker en rolig og varsom tilnærming.</p></div>
+      </article>
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/gua-sha.jpg" alt="Hjerteformet rosenkvarts-sten til Gua Sha i en hånd" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Rosenkvarts</span><h3>Gua Sha ansikt</h3><p>Oppvarmet, hjerteformet rosenkvarts strykes over ansiktets linjer. En varm og velgjørende ansiktsbehandling.</p></div>
+      </article>
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/oreakupunktur.jpg" alt="Øreakupunktur" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Punktvis</span><h3>Øreakupunktur</h3><p>Ørets soner stimuleres med tynne nåler. Kombineres gjerne med soneterapi i samme time.</p></div>
+      </article>
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/kopping.jpg" alt="Koppingkopper i glass på linhåndkle" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Sirkulasjon</span><h3>Kopping</h3><p>Skånsom kopping som løsner i vevet og kjennes som et dypt, behagelig drag i muskulaturen.</p></div>
+      </article>
+      <article class="beh-kort">
+        <div class="beh-bilde"><img src="images/chakra-healing.jpg" alt="Chakrasteiner på teppe over hvilende person" loading="lazy"></div>
+        <div class="beh-tekst"><span class="beh-tag">Energi</span><h3>Chakra healing</h3><p>En stille time der kroppens energipunkter møtes med varme hender. For hvile på et dypere plan.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 PRISER ============ -->
+<section class="sek pris-sek" id="priser">
+  <div class="wrap">
+    <div class="sek-hode">
+      <span class="eyebrow">02 · Priser</span>
+      <h2>Du betaler for tid, <em>ikke for type</em></h2>
+      <p class="lede">Én enkel prisliste: velg hvor lenge du vil bli. Innenfor timen kan flere behandlingsformer kombineres, uten tillegg.</p>
+    </div>
+    <div class="pris-grid">
+      <div class="pris-kort">
+        <div class="pris-tid">Kort time</div>
+        <div class="pris-belop">600<small> kr</small></div>
+        <div class="pris-min">40 minutter</div>
+        <p>Perfekt til fotsone eller ansiktsbehandling når hverdagen er travel.</p>
+      </div>
+      <div class="pris-kort mest">
+        <span class="mest-tag">Mest valgt</span>
+        <div class="pris-tid">Hel time</div>
+        <div class="pris-belop">800<small> kr</small></div>
+        <div class="pris-min">60 minutter</div>
+        <p>Tid nok til en hel behandling, eller to former kombinert i ro og mak.</p>
+      </div>
+      <div class="pris-kort">
+        <div class="pris-tid">Lang time</div>
+        <div class="pris-belop">1000<small> kr</small></div>
+        <div class="pris-min">80 minutter</div>
+        <p>For deg som vil kjenne på skikkelig dyp hvile, uten å se på klokken.</p>
+      </div>
+    </div>
+    <div class="pris-info">
+      <div class="klippekort">
+        <h3>Klippekort: betal for fem, få seks</h3>
+        <p>Går du fast, lønner det seg. Kjøp fem timer og få den sjette på huset — du sparer inntil 1000 kr. Spør om klippekort neste gang du er innom.</p>
+        <div class="klipp-rad" aria-hidden="true">
+          <span class="klipp">1</span><span class="klipp">2</span><span class="klipp">3</span><span class="klipp">4</span><span class="klipp">5</span><span class="klipp gratis">6</span>
+        </div>
+      </div>
+      <div class="vilkaar">
+        <h3>Godt å vite</h3>
+        <ul>
+          <li>Avbestilling er gratis frem til 24 timer før timen.</li>
+          <li>Ved avbestilling samme dag eller uteblivelse belastes 300 kr.</li>
+          <li>Betal enkelt med Vipps til 973 47 942, eller kontant.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 GAVEKORT ============ -->
+<section class="sek" id="gavekort">
+  <div class="wrap gave-grid">
+    <div class="voucher" aria-label="Illustrasjon av gavekortet">
+      <div class="v-topp">
+        <span class="v-merke">Via SONER<i>.</i></span>
+        <span class="v-g">Gavekort</span>
+      </div>
+      <div class="v-t">En times ekte pause</div>
+      <p class="v-u">Valgfritt beløp · Gjelder alle behandlinger<br>Liaveien 49A, Rasta</p>
+      <span class="segl" aria-hidden="true">VS</span>
+    </div>
+    <div>
+      <span class="eyebrow">03 · Gavekort</span>
+      <h2 style="margin-top:14px">Gi bort <em>ro</em> til noen du er glad i</h2>
+      <p class="lede" style="margin-top:12px">Et gavekort hos Via SONER er en time der noen andre tar seg av alt. Velg beløpet selv — en hel time til 800 kr er den vanligste gaven.</p>
+      <ol class="gave-steg">
+        <li>
+          <span class="s-nr">1</span>
+          <div><h3>Send en melding</h3><p>SMS eller e-post om hvem gavekortet er til og hvilket beløp du ønsker.</p></div>
+        </li>
+        <li>
+          <span class="s-nr">2</span>
+          <div><h3>Betal med Vipps</h3><p>Vipps beløpet til 973 47 942, så er gavekortet betalt.</p></div>
+        </li>
+        <li>
+          <span class="s-nr">3</span>
+          <div><h3>Gi det bort</h3><p>Du får gavekortet tilsendt digitalt, eller på papir om du heller vil ha noe å pakke inn.</p></div>
+        </li>
+      </ol>
+      <a class="knapp" href="sms:+4797347942?&body=Hei%21%20Jeg%20vil%20gjerne%20kj%C3%B8pe%20et%20gavekort%20hos%20Via%20SONER.">Bestill gavekort på SMS</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 TERAPEUTEN ============ -->
+<section class="sek om-sek" id="terapeuten">
+  <div class="wrap om-grid">
+    <div class="om-bilde">
+      <img src="images/audhild-portrett.jpg" alt="Audhild Bøe, soneterapeut hos Via SONER" loading="lazy">
+      <blockquote class="om-sitat">«Jeg tror på gode intensjoner, endringsvilje og at kroppen vil sin egen ro. Min jobb er å gi den tid og trygge hender.»</blockquote>
+    </div>
+    <div class="om-tekst">
+      <span class="eyebrow">04 · Terapeuten</span>
+      <h2>Audhild Bøe, <em>feelgood-ambassadør</em> på Rasta</h2>
+      <p>Audhild har jobbet med berøring og soneterapi siden 2013 og driver Via SONER fra sitt behandlingsrom i <strong>Liaveien 49A på Rasta</strong>. Hun er utdannet ved Axelsons Body Work School i Oslo, med yrkesutdannelse i soneterapi fra 2014 og en rekke videreutdannelser i årene etter.</p>
+      <p>Hos Audhild er ingen time helt lik. Hun lytter først, og setter så sammen behandlingen ut fra det du kommer med den dagen — enten det er en sliten rygg, tankekjør eller bare et ønske om en times ekte pause.</p>
+      <div class="tidslinje">
+        <div class="tl-rad"><span class="tl-aar">2024</span><h3>Akupressur</h3><p>Videreutdannelse hos Inger J. Solend</p></div>
+        <div class="tl-rad"><span class="tl-aar">2022</span><h3>Kopping</h3><p>Koppingsteknikker, Axelsons Body Work School</p></div>
+        <div class="tl-rad"><span class="tl-aar">2019</span><h3>Velværemassasje, kraniosakral &amp; hodebunnsmassasje</h3><p>Tre utdannelser samme år, Axelsons Body Work School</p></div>
+        <div class="tl-rad"><span class="tl-aar">2014</span><h3>Soneterapi, yrkesutdannelse</h3><p>Axelsons Body Work School, Oslo</p></div>
+        <div class="tl-rad"><span class="tl-aar">2013</span><h3>Soneterapi grunnkurs &amp; healingmassasje</h3><p>Grunnkurs og healingmassasje hos Hans Axelson</p></div>
+        <div class="tl-rad"><span class="tl-aar">2011</span><h3>Reiki I Healing Practitioner</h3><p>Der det hele startet, hos Jose D. F. Garcia</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 NATURTERAPI ============ -->
+<section class="sek natur" id="naturterapi">
+  <div class="wrap natur-grid">
+    <div>
+      <span class="eyebrow">05 · Under åpen himmel</span>
+      <h2>Naturterapi i <em>sommerhalvåret</em></h2>
+      <p>Fra juni til august flytter Via SONER gjerne ut. Skogen rundt Oslo har sin egen virkning: lyden av trær, lukten av furu og bakken under føttene gjør noe med pusten før behandlingen i det hele tatt har begynt.</p>
+      <ul class="natur-fakta">
+        <li><span><strong style="color:#fff">Sesong:</strong> juni, juli og august — med forbehold om vær.</span></li>
+        <li><span><strong style="color:#fff">Omfang:</strong> grupper på minst 4 personer, eller oppdrag på minst 3 timer.</span></li>
+        <li><span><strong style="color:#fff">Sted:</strong> i Oslo-området — perfekt for venninnegjengen, teamet eller familien.</span></li>
+      </ul>
+      <a class="knapp" href="mailto:audhilsen@gmail.com?subject=Naturterapi%20utend%C3%B8rs">Spør om utendørs opplegg</a>
+    </div>
+    <div>
+      <video class="natur-video" autoplay muted loop playsinline poster="images/utendors.jpg" aria-label="Utendørs fotsonebehandling på benk ved skogsvann, med solskimmer i trærne">
+        <source src="media/utendors.mp4" type="video/mp4">
+        <img src="images/utendors.jpg" alt="Utendørs fotsonebehandling på benk ved skogsvann">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 VIRKNINGER ============ -->
+<section class="sek" id="beroring">
+  <div class="wrap">
+    <div class="sek-hode">
+      <span class="eyebrow">06 · Hvorfor berøring</span>
+      <h2>Det mange kjenner <em>etter en time</em></h2>
+      <p class="lede">Berøring er noe av det eldste vi mennesker gjør for hverandre. Dette er virkningene klientene hos Via SONER oftest beskriver.</p>
+    </div>
+    <div class="virk-layout">
+      <figure class="virk-art">
+        <img src="images/energi-art.jpg" alt="Håndtegnet akvarellplansje av en mediterende figur med kroppens energipunkter" loading="lazy">
+        <figcaption><span>Kroppens energipunkter</span><span>Plansje № 02</span></figcaption>
+      </figure>
+      <div class="virk-grid">
+        <div class="virk"><span class="dot">01</span><h3>Dyp avspenning</h3><p>Kroppen får lov å slippe taket, ofte for første gang på lenge.</p></div>
+        <div class="virk"><span class="dot">02</span><h3>Bedre søvn</h3><p>Mange forteller at natten etter behandling er roligere og dypere.</p></div>
+        <div class="virk"><span class="dot">03</span><h3>Beroligende virkning</h3><p>Rolige hender og et stille rom gir pusten plass til å senke seg.</p></div>
+        <div class="virk"><span class="dot">04</span><h3>Økt sirkulasjon</h3><p>Berøring setter fart på blodomløpet og gir varme ut i kroppen.</p></div>
+        <div class="virk"><span class="dot">05</span><h3>Ny energi</h3><p>Paradoksalt nok gir dyp hvile ofte mer overskudd i dagene etter.</p></div>
+        <div class="virk"><span class="dot">06</span><h3>Lindring i hverdagen</h3><p>Myke muskler og senket spenning kjennes gjerne i dagene som følger.</p></div>
+      </div>
+    </div>
+    <div class="forbehold">
+      <span>Soneterapi og naturterapi er velværebehandlinger og et supplement til, aldri en erstatning for, nødvendig legehjelp. Er du usikker på egen helse, kontakt fastlegen din først.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 SPØRSMÅL ============ -->
+<section class="sek faq-sek" id="sporsmal">
+  <div class="wrap">
+    <div class="sek-hode">
+      <span class="eyebrow">07 · Spørsmål &amp; svar</span>
+      <h2>Lurer du på noe <em>før første time?</em></h2>
+      <p class="lede">Her er svarene på det folk oftest spør om. Finner du ikke ditt, er det bare å ringe eller sende en melding.</p>
+    </div>
+    <div class="faq-liste">
+      <details class="faq">
+        <summary>Hva skjer i den første timen?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="svar">Timen starter med en kort samtale om hvordan du har det og hva du ønsker ut av behandlingen. Deretter setter Audhild sammen behandlingen ut fra det du kommer med den dagen. Hele samtalen skjer innenfor tiden du har bestilt.</p>
+      </details>
+      <details class="faq">
+        <summary>Hva bør jeg ha på meg?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="svar">Kom i vanlige, behagelige klær. Ved fotsoneterapi er det bare føttene som er bare, og ved massasje får du håndklær og tepper slik at du alltid er godt dekket.</p>
+      </details>
+      <details class="faq">
+        <summary>Kan jeg kombinere flere behandlinger i én time?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="svar">Ja. Du betaler for tid, ikke for behandlingstype, så flere behandlingsformer kan kombineres i samme time uten tillegg i prisen.</p>
+      </details>
+      <details class="faq">
+        <summary>Hvordan betaler jeg?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="svar">Du betaler enkelt med Vipps til 973 47 942 etter timen, eller kontant om du foretrekker det.</p>
+      </details>
+      <details class="faq">
+        <summary>Hva om jeg må avbestille?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="svar">Avbestilling er gratis frem til 24 timer før timen. Ved avbestilling samme dag eller uteblivelse belastes 300 kr.</p>
+      </details>
+      <details class="faq">
+        <summary>Er soneterapi trygt for meg?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="svar">Soneterapi og de andre behandlingene hos Via SONER er velværebehandlinger og et supplement til, aldri en erstatning for, nødvendig legehjelp. Er du usikker på egen helse, snakk med fastlegen din først.</p>
+      </details>
+      <details class="faq">
+        <summary>Selger dere gavekort?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="svar">Ja. Send en SMS eller e-post om hvem gavekortet er til og hvilket beløp du ønsker, betal med Vipps til 973 47 942, så får du gavekortet tilsendt digitalt eller klart til henting.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 KONTAKT ============ -->
+<section class="sek" id="kontakt">
+  <div class="wrap">
+    <div class="sek-hode">
+      <span class="eyebrow">08 · Kontakt &amp; vei</span>
+      <h2>Timen bestiller du med <em>én telefon</em></h2>
+      <p class="lede">Ring eller send en melding, så finner dere et tidspunkt som passer. Behandlingsrommet ligger i Liaveien 49A på Rasta, med god parkering og kort vei fra både Lørenskog og Oslo.</p>
+    </div>
+    <div class="kontakt-grid">
+      <div class="kontakt-kort">
+        <a class="k-rad" href="tel:+4797347942">
+          <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span><span class="l">Ring eller send SMS</span><br><span class="v">973 47 942</span><br><span class="u">Raskeste vei til time. Vipps til samme nummer.</span></span>
+        </a>
+        <a class="k-rad" href="mailto:audhilsen@gmail.com">
+          <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></span>
+          <span><span class="l">E-post</span><br><span class="v">audhilsen@gmail.com</span><br><span class="u">Fint for spørsmål om gavekort og utendørs opplegg.</span></span>
+        </a>
+        <a class="k-rad" href="https://www.google.com/maps/dir/?api=1&destination=Liaveien+49A,+1476+Rasta" target="_blank" rel="noopener">
+          <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span><span class="l">Adresse</span><br><span class="v">Liaveien 49A, 1476 Rasta</span><br><span class="u">Lørenskog kommune. Trykk for veibeskrivelse.</span></span>
+        </a>
+        <a class="k-rad" href="https://facebook.com/ViaSONER" target="_blank" rel="noopener">
+          <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+          <span><span class="l">Facebook</span><br><span class="v">facebook.com/ViaSONER</span><br><span class="u">Følg med på nyheter og ledige timer.</span></span>
+        </a>
+        <div class="k-rad">
+          <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
+          <span><span class="l">Åpningstider</span><br><span class="v">Alle dager 10–21</span><br><span class="u">Også kveldstimer, slik at behandlingen passer inn i din dag.</span></span>
+        </div>
+      </div>
+      <div class="kart">
+        <iframe src="https://www.google.com/maps?q=Liaveien+49A,+1476+Rasta,+Norge&z=14&output=embed" title="Kart til Via SONER, Liaveien 49A, Rasta" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLUTT-CTA ============ -->
+<section class="slutt">
+  <div class="wrap">
+    <h2>Kroppen din har ventet <em>lenge nok</em></h2>
+    <p>Én telefon, så er timen din satt. Kvelds- og helgetimer er ledige hele uken.</p>
+    <a class="knapp" href="tel:+4797347942">Ring 973 47 942</a>
+    <p class="u">Eller send SMS til samme nummer — <a href="mailto:audhilsen@gmail.com">audhilsen@gmail.com</a> for e-post.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="merke" href="#topp">Via SONER<i>.</i></a>
+        <p>Soneterapi, massasje og naturterapi på Rasta i Lørenskog. Veien til ro går via soner.</p>
+      </div>
+      <div>
+        <span class="l">Innhold</span>
+        <ul class="footer-lenker">
+          <li><a href="#behandlinger">Behandlinger</a></li>
+          <li><a href="#priser">Priser</a></li>
+          <li><a href="#gavekort">Gavekort</a></li>
+          <li><a href="#terapeuten">Terapeuten</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="l">Kontakt</span>
+        <ul class="footer-lenker">
+          <li><a href="tel:+4797347942">973 47 942</a></li>
+          <li><a href="mailto:audhilsen@gmail.com">audhilsen@gmail.com</a></li>
+          <li><a href="https://facebook.com/ViaSONER" target="_blank" rel="noopener">Facebook</a></li>
+          <li>Liaveien 49A, 1476 Rasta</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bunn">
+      <span>© <span id="aar"></span> Via SONER · Audhild Bøe</span>
+      <span>Velværebehandling — erstatter ikke nødvendig legehjelp</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Årstall */
+  document.getElementById('aar').textContent = new Date().getFullYear();
+
+  /* Nav-skygge */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('skrollet', window.scrollY > 12); };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* Mobilmeny */
+  var mk = document.getElementById('menyKnapp'), lenker = document.getElementById('navLenker');
+  mk.addEventListener('click', function(){
+    var open = lenker.classList.toggle('open');
+    mk.setAttribute('aria-expanded', open);
+  });
+  lenker.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ lenker.classList.remove('open'); mk.setAttribute('aria-expanded','false'); });
+  });
+
+  /* Sone-liste: auto-syklus + hover/klikk */
+  var rader = Array.prototype.slice.call(document.querySelectorAll('#soneListe li'));
+  var aktiv = 0, timer = null, pause = false;
+
+  function sett(i){
+    aktiv = i;
+    rader.forEach(function(r,j){ r.classList.toggle('aktiv', j===i); });
+  }
+  function neste(){ if(!pause) sett((aktiv+1)%rader.length); }
+  function start(){ if(!rm && !timer) timer = setInterval(neste, 2800); }
+
+  rader.forEach(function(r,i){
+    r.addEventListener('mouseenter', function(){ pause=true; sett(i); });
+    r.addEventListener('mouseleave', function(){ pause=false; });
+    r.addEventListener('click', function(){ sett(i); });
+  });
+
+  sett(0); start();
+
+  /* Cinemagraphene: tving avspilling — autoplay-attributtet droppes stille i enkelte nettlesere */
+  var videoer = Array.prototype.slice.call(document.querySelectorAll('video'));
+  if(rm){
+    videoer.forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); });
+  } else {
+    var spill = function(){
+      videoer.forEach(function(v){
+        if(v.paused){ var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+      });
+    };
+    spill();
+    window.addEventListener('load', spill);
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) spill(); });
+    ['scroll','pointerdown','touchstart','keydown'].forEach(function(ev){
+      window.addEventListener(ev, spill, {passive:true});
+    });
+    var vio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ var p = e.target.play(); if(p && p.catch) p.catch(function(){}); }
+      });
+    }, {threshold:.1});
+    videoer.forEach(function(v){ vio.observe(v); });
+  }
+})();
+</script>
+</body>
+</html>
