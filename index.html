@@ -9,7 +9,10 @@
 <meta property="og:description" content="Veien til ro går via soner. Behandling fra 600 kr, åpent alle dager 10–21 på Rasta.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nb_NO">
-<meta property="og:image" content="images/utendors.jpg">
+<meta property="og:url" content="https://dkosor.github.io/via-soner/">
+<meta property="og:image" content="https://dkosor.github.io/via-soner/images/utendors.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://dkosor.github.io/via-soner/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -33,7 +36,12 @@
   },
   "openingHours": "Mo-Su 10:00-21:00",
   "priceRange": "600–1000 NOK",
-  "paymentAccepted": "Vipps, kontant"
+  "paymentAccepted": "Vipps, kontant",
+  "makesOffer": [
+    {"@type": "Offer", "name": "Kort time — 40 minutter", "price": "600", "priceCurrency": "NOK"},
+    {"@type": "Offer", "name": "Hel time — 60 minutter", "price": "800", "priceCurrency": "NOK"},
+    {"@type": "Offer", "name": "Lang time — 80 minutter", "price": "1000", "priceCurrency": "NOK"}
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -460,6 +468,130 @@ a.k-rad:hover{background:var(--blush)}
 .footer-lenker a{text-decoration:none;color:rgba(250,245,238,.85);transition:color var(--fart)}
 .footer-lenker a:hover{color:var(--rose-lys)}
 .footer-bunn{margin-top:38px;padding-top:20px;border-top:1px solid rgba(250,245,238,.16);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.78rem;color:rgba(250,245,238,.5)}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.inn{opacity:1;transform:none}
+.rv-2{transition-delay:.08s}
+.rv-3{transition-delay:.16s}
+.rv-4{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* Håndtegnet strek under «via soner» */
+.hero h1 em{position:relative;white-space:nowrap}
+.hero h1 em::after{
+  content:"";position:absolute;left:0;right:.5ch;bottom:-.08em;height:.22em;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' preserveAspectRatio='none'%3E%3Cpath d='M4 16 C 60 8, 120 20, 170 13 C 220 6, 260 16, 296 10' fill='none' stroke='%23B25667' stroke-width='3.4' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  pointer-events:none;
+}
+
+/* ============ ORNAMENT-DELER ============ */
+.ornament{display:flex;justify-content:center;padding:0 0 clamp(28px,3.5vw,44px)}
+.ornament img{width:min(220px,46vw);height:auto;mix-blend-mode:multiply;opacity:.9;filter:brightness(1.12) saturate(.9)}
+
+/* ============ EN TIME HOS AUDHILD ============ */
+.steg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  padding:26px 24px 28px;position:relative;
+  transition:transform var(--fart),box-shadow var(--fart);
+}
+.steg:hover{transform:translateY(-4px);box-shadow:var(--skygge)}
+.steg .s-tall{
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:2.6rem;line-height:1;
+  color:var(--rose-lys);display:block;margin-bottom:10px;
+}
+.steg h3{font-size:1.22rem;margin-bottom:6px}
+.steg p{font-size:.88rem}
+.steg::after{
+  content:"";position:absolute;top:50%;right:-14px;width:10px;height:10px;border-radius:50%;
+  background:var(--rose-lys);transform:translateY(-50%);
+}
+.steg:last-child::after{display:none}
+@media (max-width:1020px){.steg-grid{grid-template-columns:repeat(2,1fr)}.steg::after{display:none}}
+@media (max-width:560px){.steg-grid{grid-template-columns:1fr}}
+
+/* ============ BEHANDLINGSKORT: META + LES MER ============ */
+.beh-meta{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  margin-top:auto;padding-top:12px;border-top:1px solid var(--krem-dyp);
+  font-size:.76rem;color:var(--tekst-dus);
+}
+.beh-meta .tid{display:inline-flex;align-items:center;gap:6px}
+.beh-meta .tid::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rose)}
+.beh-meta .mer{font-weight:700;color:var(--rose-dyp);letter-spacing:.06em;text-transform:uppercase;font-size:.68rem}
+.beh-kort{cursor:pointer}
+.beh-kort:focus-visible{outline:2.5px solid var(--rose);outline-offset:3px}
+
+/* ============ BEHANDLINGSDIALOG ============ */
+dialog.beh-dialog{
+  border:none;border-radius:18px;padding:0;max-width:560px;width:calc(100% - 40px);
+  margin:auto;max-height:calc(100vh - 60px);overflow:auto;
+  background:var(--krem);color:var(--tekst);box-shadow:0 30px 80px -20px rgba(59,46,53,.5);
+}
+dialog.beh-dialog::backdrop{background:rgba(59,46,53,.45);backdrop-filter:blur(3px)}
+.bd-bilde{aspect-ratio:16/8;overflow:hidden}
+.bd-bilde img{width:100%;height:100%;object-fit:cover}
+.bd-innhold{padding:26px 30px 30px}
+.bd-innhold .beh-tag{margin-bottom:10px}
+.bd-innhold h3{font-size:1.7rem;margin-bottom:10px}
+.bd-innhold p{font-size:.95rem;margin-bottom:12px}
+.bd-fakta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 20px;padding:14px 18px;background:var(--blush);border-radius:12px;font-size:.85rem}
+.bd-fakta b{color:var(--rose-dyp)}
+.bd-bunn{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.bd-lukk{
+  position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
+  background:rgba(250,245,238,.92);border:none;cursor:pointer;color:var(--tekst);
+  display:grid;place-items:center;transition:background var(--fart);
+}
+.bd-lukk:hover{background:#fff}
+
+/* ============ FAQ MED PLANSJE ============ */
+.faq-layout{display:grid;grid-template-columns:.62fr 1.38fr;gap:20px;align-items:start}
+.faq-art{
+  background:#FCF8F2;border:1px solid var(--kant);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;margin:0;position:sticky;top:100px;
+}
+.faq-art img{width:100%;height:auto}
+.faq-art figcaption{
+  padding:11px 18px;border-top:1px solid var(--krem-dyp);
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--tekst-dus);
+  display:flex;justify-content:space-between;gap:10px;
+}
+@media (max-width:900px){.faq-layout{grid-template-columns:1fr}.faq-art{position:static;max-width:340px}}
+
+/* ============ SONE-PRIKKNAV ============ */
+.dotnav{
+  position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:40;
+  display:flex;flex-direction:column;gap:12px;
+}
+.dotnav a{
+  width:11px;height:11px;border-radius:50%;
+  border:1.5px solid var(--rose);background:transparent;display:block;position:relative;
+  transition:background var(--fart),transform var(--fart);
+}
+.dotnav a:hover{transform:scale(1.35)}
+.dotnav a.aktiv{background:var(--rose)}
+.dotnav a span{
+  position:absolute;right:22px;top:50%;transform:translateY(-50%);
+  background:var(--plomme);color:var(--krem);font-size:.68rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:8px;
+  white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--fart);
+}
+.dotnav a:hover span,.dotnav a:focus-visible span{opacity:1}
+@media (max-width:1280px){.dotnav{display:none}}
+
+/* ============ STICKY MOBIL-CTA ============ */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(250,245,238,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid var(--kant);
+  transform:translateY(110%);transition:transform .3s ease;
+}
+.sticky-cta.vis{transform:none}
+.sticky-cta .knapp{flex:1;padding:13px 10px;font-size:.92rem;justify-content:center}
+@media (max-width:820px){.sticky-cta{display:flex}}
 </style>
 </head>
 <body>
@@ -504,14 +636,14 @@ a.k-rad:hover{background:var(--blush)}
   </div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Soneterapi &amp; naturterapi · Rasta i Lørenskog</span>
-      <h1>Veien til ro går <em>via soner</em>.</h1>
-      <p class="lede">Kroppen er kartlagt i soner, og hver sone kan møtes med rolige hender. Hos Audhild på Rasta får du soneterapi, massasje og naturterapi i trygge omgivelser — alle dager fra 10 til 21.</p>
-      <div class="hero-cta">
+      <span class="eyebrow rv">Soneterapi &amp; naturterapi · Rasta i Lørenskog</span>
+      <h1 class="rv rv-2">Veien til ro går <em>via soner</em>.</h1>
+      <p class="lede rv rv-3">Kroppen er kartlagt i soner, og hver sone kan møtes med rolige hender. Hos Audhild på Rasta får du soneterapi, massasje og naturterapi i trygge omgivelser — alle dager fra 10 til 21.</p>
+      <div class="hero-cta rv rv-4">
         <a class="knapp" href="tel:+4797347942">Ring 973 47 942</a>
         <a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20time%20hos%20Via%20SONER.">Send SMS</a>
       </div>
-      <div class="hero-meta">
+      <div class="hero-meta rv rv-4">
         <div><span class="l">Åpent</span><br><span class="v">Alle dager 10–21</span></div>
         <div><span class="l">Pris</span><br><span class="v">Fra 600 kr</span></div>
         <div><span class="l">Sted</span><br><span class="v">Rasta, 15 min fra Oslo</span></div>
@@ -564,47 +696,73 @@ a.k-rad:hover{background:var(--blush)}
       <p class="lede">Alle behandlinger tilpasses deg og kan kombineres i samme time. Er du usikker på hva som passer, finner dere ut av det sammen i starten av timen.</p>
     </div>
     <div class="beh-grid">
-      <article class="beh-kort">
+      <article class="beh-kort rv" data-dialog="d-fotsone" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/fotsoneterapi.jpg" alt="Fotsoneterapi, tomler som presser mot fotsålen" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Klassikeren</span><h3>Fotsoneterapi</h3><p>Rolige, faste trykk på fotens soner. Mange kjenner at skuldrene senker seg allerede etter få minutter.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Klassikeren</span><h3>Fotsoneterapi</h3><p>Rolige, faste trykk på fotens soner. Mange kjenner at skuldrene senker seg allerede etter få minutter.</p>
+        <div class="beh-meta"><span class="tid">40–60 min passer fint</span><span class="mer">Les mer</span></div></div>
       </article>
-      <article class="beh-kort">
+      <article class="beh-kort rv rv-2" data-dialog="d-ansikt" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/ansiktsoneterapi.jpg" alt="Ansiktsoneterapi" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Mild &amp; dyp</span><h3>Ansiktsoneterapi</h3><p>Lette berøringer av ansiktets soner. En stille behandling som ofte gir en følelse av klarhet og hvile.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Mild &amp; dyp</span><h3>Ansiktsoneterapi</h3><p>Lette berøringer av ansiktets soner. En stille behandling som ofte gir en følelse av klarhet og hvile.</p>
+        <div class="beh-meta"><span class="tid">40–60 min passer fint</span><span class="mer">Les mer</span></div></div>
       </article>
-      <article class="beh-kort">
+      <article class="beh-kort rv rv-3" data-dialog="d-massasje" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/massasje.jpg" alt="Velværemassasje av rygg" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Muskler</span><h3>Velværemassasje</h3><p>Klassisk massasje for stive skuldre, nakke og rygg. Trykket tilpasses fra mykt til fast underveis.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Muskler</span><h3>Velværemassasje</h3><p>Klassisk massasje for stive skuldre, nakke og rygg. Trykket tilpasses fra mykt til fast underveis.</p>
+        <div class="beh-meta"><span class="tid">60–80 min passer fint</span><span class="mer">Les mer</span></div></div>
       </article>
-      <article class="beh-kort">
+      <article class="beh-kort rv rv-4" data-dialog="d-kranio" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/kraniosakral.jpg" alt="Kraniosakral terapi ved hodet" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Nervesystemet</span><h3>Kraniosakral terapi</h3><p>Svært lette holdegrep om hode, nakke og korsrygg. For deg som ønsker en rolig og varsom tilnærming.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Nervesystemet</span><h3>Kraniosakral terapi</h3><p>Svært lette holdegrep om hode, nakke og korsrygg. For deg som ønsker en rolig og varsom tilnærming.</p>
+        <div class="beh-meta"><span class="tid">60 min passer fint</span><span class="mer">Les mer</span></div></div>
       </article>
-      <article class="beh-kort">
+      <article class="beh-kort rv" data-dialog="d-guasha" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/gua-sha.jpg" alt="Hjerteformet rosenkvarts-sten til Gua Sha i en hånd" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Rosenkvarts</span><h3>Gua Sha ansikt</h3><p>Oppvarmet, hjerteformet rosenkvarts strykes over ansiktets linjer. En varm og velgjørende ansiktsbehandling.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Rosenkvarts</span><h3>Gua Sha ansikt</h3><p>Oppvarmet, hjerteformet rosenkvarts strykes over ansiktets linjer. En varm og velgjørende ansiktsbehandling.</p>
+        <div class="beh-meta"><span class="tid">40–60 min passer fint</span><span class="mer">Les mer</span></div></div>
       </article>
-      <article class="beh-kort">
+      <article class="beh-kort rv rv-2" data-dialog="d-ore" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/oreakupunktur.jpg" alt="Øreakupunktur" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Punktvis</span><h3>Øreakupunktur</h3><p>Ørets soner stimuleres med tynne nåler. Kombineres gjerne med soneterapi i samme time.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Punktvis</span><h3>Øreakupunktur</h3><p>Ørets soner stimuleres med tynne nåler. Kombineres gjerne med soneterapi i samme time.</p>
+        <div class="beh-meta"><span class="tid">Fint i kombinasjon</span><span class="mer">Les mer</span></div></div>
       </article>
-      <article class="beh-kort">
+      <article class="beh-kort rv rv-3" data-dialog="d-kopping" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/kopping.jpg" alt="Koppingkopper i glass på linhåndkle" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Sirkulasjon</span><h3>Kopping</h3><p>Skånsom kopping som løsner i vevet og kjennes som et dypt, behagelig drag i muskulaturen.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Sirkulasjon</span><h3>Kopping</h3><p>Skånsom kopping som løsner i vevet og kjennes som et dypt, behagelig drag i muskulaturen.</p>
+        <div class="beh-meta"><span class="tid">40–60 min passer fint</span><span class="mer">Les mer</span></div></div>
       </article>
-      <article class="beh-kort">
+      <article class="beh-kort rv rv-4" data-dialog="d-chakra" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="beh-bilde"><img src="images/chakra-healing.jpg" alt="Chakrasteiner på teppe over hvilende person" loading="lazy"></div>
-        <div class="beh-tekst"><span class="beh-tag">Energi</span><h3>Chakra healing</h3><p>En stille time der kroppens energipunkter møtes med varme hender. For hvile på et dypere plan.</p></div>
+        <div class="beh-tekst"><span class="beh-tag">Energi</span><h3>Chakra healing</h3><p>En stille time der kroppens energipunkter møtes med varme hender. For hvile på et dypere plan.</p>
+        <div class="beh-meta"><span class="tid">60–80 min passer fint</span><span class="mer">Les mer</span></div></div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ 02 PRISER ============ -->
+<!-- ============ 02 EN TIME HOS AUDHILD ============ -->
+<section class="sek" id="entime">
+  <div class="wrap">
+    <div class="ornament rv"><img src="images/sprig.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+    <div class="sek-hode">
+      <span class="eyebrow">02 · Første gang?</span>
+      <h2>En time hos Audhild, <em>steg for steg</em></h2>
+      <p class="lede">Aldri prøvd soneterapi før? Helt greit — de fleste har ikke det. Slik foregår det, fra du kommer til du går.</p>
+    </div>
+    <div class="steg-grid">
+      <div class="steg rv"><span class="s-tall">1</span><h3>Kom som du er</h3><p>Vanlige, behagelige klær er alt du trenger. Det er god parkering rett ved Liaveien 49A.</p></div>
+      <div class="steg rv rv-2"><span class="s-tall">2</span><h3>Dere snakker kort sammen</h3><p>Audhild lytter til hva du kommer med i dag — en sliten rygg, tankekjør eller bare behov for pause.</p></div>
+      <div class="steg rv rv-3"><span class="s-tall">3</span><h3>Behandlingen tilpasses deg</h3><p>Én eller flere behandlingsformer settes sammen i ditt tempo. Du er alltid godt dekket med håndklær og tepper.</p></div>
+      <div class="steg rv rv-4"><span class="s-tall">4</span><h3>Tid til å lande</h3><p>Etterpå får du litt tid til å komme til deg selv før du går ut i hverdagen igjen. Betal med Vipps eller kontant.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 PRISER ============ -->
 <section class="sek pris-sek" id="priser">
   <div class="wrap">
     <div class="sek-hode">
-      <span class="eyebrow">02 · Priser</span>
+      <span class="eyebrow">03 · Priser</span>
       <h2>Du betaler for tid, <em>ikke for type</em></h2>
       <p class="lede">Én enkel prisliste: velg hvor lenge du vil bli. Innenfor timen kan flere behandlingsformer kombineres, uten tillegg.</p>
     </div>
@@ -662,7 +820,7 @@ a.k-rad:hover{background:var(--blush)}
       <span class="segl" aria-hidden="true">VS</span>
     </div>
     <div>
-      <span class="eyebrow">03 · Gavekort</span>
+      <span class="eyebrow">04 · Gavekort</span>
       <h2 style="margin-top:14px">Gi bort <em>ro</em> til noen du er glad i</h2>
       <p class="lede" style="margin-top:12px">Et gavekort hos Via SONER er en time der noen andre tar seg av alt. Velg beløpet selv — en hel time til 800 kr er den vanligste gaven.</p>
       <ol class="gave-steg">
@@ -692,7 +850,7 @@ a.k-rad:hover{background:var(--blush)}
       <blockquote class="om-sitat">«Jeg tror på gode intensjoner, endringsvilje og at kroppen vil sin egen ro. Min jobb er å gi den tid og trygge hender.»</blockquote>
     </div>
     <div class="om-tekst">
-      <span class="eyebrow">04 · Terapeuten</span>
+      <span class="eyebrow">05 · Terapeuten</span>
       <h2>Audhild Bøe, <em>feelgood-ambassadør</em> på Rasta</h2>
       <p>Audhild har jobbet med berøring og soneterapi siden 2013 og driver Via SONER fra sitt behandlingsrom i <strong>Liaveien 49A på Rasta</strong>. Hun er utdannet ved Axelsons Body Work School i Oslo, med yrkesutdannelse i soneterapi fra 2014 og en rekke videreutdannelser i årene etter.</p>
       <p>Hos Audhild er ingen time helt lik. Hun lytter først, og setter så sammen behandlingen ut fra det du kommer med den dagen — enten det er en sliten rygg, tankekjør eller bare et ønske om en times ekte pause.</p>
@@ -712,7 +870,7 @@ a.k-rad:hover{background:var(--blush)}
 <section class="sek natur" id="naturterapi">
   <div class="wrap natur-grid">
     <div>
-      <span class="eyebrow">05 · Under åpen himmel</span>
+      <span class="eyebrow">06 · Under åpen himmel</span>
       <h2>Naturterapi i <em>sommerhalvåret</em></h2>
       <p>Fra juni til august flytter Via SONER gjerne ut. Skogen rundt Oslo har sin egen virkning: lyden av trær, lukten av furu og bakken under føttene gjør noe med pusten før behandlingen i det hele tatt har begynt.</p>
       <ul class="natur-fakta">
@@ -735,7 +893,7 @@ a.k-rad:hover{background:var(--blush)}
 <section class="sek" id="beroring">
   <div class="wrap">
     <div class="sek-hode">
-      <span class="eyebrow">06 · Hvorfor berøring</span>
+      <span class="eyebrow">07 · Hvorfor berøring</span>
       <h2>Det mange kjenner <em>etter en time</em></h2>
       <p class="lede">Berøring er noe av det eldste vi mennesker gjør for hverandre. Dette er virkningene klientene hos Via SONER oftest beskriver.</p>
     </div>
@@ -763,11 +921,16 @@ a.k-rad:hover{background:var(--blush)}
 <section class="sek faq-sek" id="sporsmal">
   <div class="wrap">
     <div class="sek-hode">
-      <span class="eyebrow">07 · Spørsmål &amp; svar</span>
+      <span class="eyebrow">08 · Spørsmål &amp; svar</span>
       <h2>Lurer du på noe <em>før første time?</em></h2>
       <p class="lede">Her er svarene på det folk oftest spør om. Finner du ikke ditt, er det bare å ringe eller sende en melding.</p>
     </div>
-    <div class="faq-liste">
+    <div class="faq-layout">
+      <figure class="faq-art rv">
+        <img src="images/ore-art.jpg" alt="Håndtegnet akvarellplansje av ørets soner" loading="lazy">
+        <figcaption><span>Ørets soner</span><span>Plansje № 03</span></figcaption>
+      </figure>
+    <div class="faq-liste rv rv-2">
       <details class="faq">
         <summary>Hva skjer i den første timen?<span class="pluss"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <p class="svar">Timen starter med en kort samtale om hvordan du har det og hva du ønsker ut av behandlingen. Deretter setter Audhild sammen behandlingen ut fra det du kommer med den dagen. Hele samtalen skjer innenfor tiden du har bestilt.</p>
@@ -797,14 +960,16 @@ a.k-rad:hover{background:var(--blush)}
         <p class="svar">Ja. Send en SMS eller e-post om hvem gavekortet er til og hvilket beløp du ønsker, betal med Vipps til 973 47 942, så får du gavekortet tilsendt digitalt eller klart til henting.</p>
       </details>
     </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ 08 KONTAKT ============ -->
 <section class="sek" id="kontakt">
   <div class="wrap">
+    <div class="ornament rv"><img src="images/sprig.jpg" alt="" aria-hidden="true" loading="lazy"></div>
     <div class="sek-hode">
-      <span class="eyebrow">08 · Kontakt &amp; vei</span>
+      <span class="eyebrow">09 · Kontakt &amp; vei</span>
       <h2>Timen bestiller du med <em>én telefon</em></h2>
       <p class="lede">Ring eller send en melding, så finner dere et tidspunkt som passer. Behandlingsrommet ligger i Liaveien 49A på Rasta, med god parkering og kort vei fra både Lørenskog og Oslo.</p>
     </div>
@@ -883,6 +1048,124 @@ a.k-rad:hover{background:var(--blush)}
   </div>
 </footer>
 
+<!-- ============ BEHANDLINGSDIALOGER ============ -->
+<dialog class="beh-dialog" id="d-fotsone">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/fotsoneterapi.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Klassikeren</span>
+    <h3>Fotsoneterapi</h3>
+    <p>Fotsoneterapi er den klassiske inngangen til soneterapi. Audhild jobber seg gjennom fotens soner med rolige, faste trykk — aldri hardere enn at du kan puste godt underveis. Kartet du så øverst på siden viser tanken bak: hver del av foten speiler en del av kroppen.</p>
+    <p>Passer for deg som vil prøve soneterapi for første gang, eller som kjenner at kroppen trenger å senke skuldrene.</p>
+    <div class="bd-fakta"><span><b>Anbefalt tid:</b> 40–60 min</span><span><b>Kombineres ofte med:</b> øreakupunktur</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20fotsoneterapi.">Send SMS</a></div>
+  </div>
+</dialog>
+<dialog class="beh-dialog" id="d-ansikt">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/ansiktsoneterapi.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Mild &amp; dyp</span>
+    <h3>Ansiktsoneterapi</h3>
+    <p>Lette, presise berøringer av ansiktets soner — en av de stilleste behandlingene Audhild gjør. Mange blir overrasket over hvor dypt en så mild behandling kan virke; det er ikke uvanlig å døse av.</p>
+    <p>Passer for deg som har mye tankekjør, eller som ønsker en varsom behandling uten fast trykk.</p>
+    <div class="bd-fakta"><span><b>Anbefalt tid:</b> 40–60 min</span><span><b>Kombineres ofte med:</b> Gua Sha</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20ansiktsoneterapi.">Send SMS</a></div>
+  </div>
+</dialog>
+<dialog class="beh-dialog" id="d-massasje">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/massasje.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Muskler</span>
+    <h3>Velværemassasje</h3>
+    <p>Klassisk massasje for stive skuldre, nakke og rygg. Trykket tilpasses underveis — fra mykt og rolig til fast og dypt — og du sier bare ifra hva som kjennes riktig. Du er alltid godt dekket med håndklær og tepper.</p>
+    <p>Passer for deg som sitter mye i løpet av dagen, eller kjenner at musklene har satt seg.</p>
+    <div class="bd-fakta"><span><b>Anbefalt tid:</b> 60–80 min</span><span><b>Kombineres ofte med:</b> kopping</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20vel%C3%A6remassasje.">Send SMS</a></div>
+  </div>
+</dialog>
+<dialog class="beh-dialog" id="d-kranio">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/kraniosakral.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Nervesystemet</span>
+    <h3>Kraniosakral terapi</h3>
+    <p>Svært lette holdegrep om hode, nakke og korsrygg — så varsomt at det nesten ikke kjennes som behandling, men mange beskriver en dyp ro underveis. Audhild tok utdannelsen ved Axelsons i 2019.</p>
+    <p>Passer for deg som ønsker den roligste og mest varsomme tilnærmingen som finnes.</p>
+    <div class="bd-fakta"><span><b>Anbefalt tid:</b> 60 min</span><span><b>Kombineres ofte med:</b> ansiktsoneterapi</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20kraniosakral%20terapi.">Send SMS</a></div>
+  </div>
+</dialog>
+<dialog class="beh-dialog" id="d-guasha">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/gua-sha.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Rosenkvarts</span>
+    <h3>Gua Sha ansikt</h3>
+    <p>En oppvarmet, hjerteformet sten av rosenkvarts strykes i rolige drag over ansiktets linjer. Varmen fra stenen og de gjentakende bevegelsene gjør dette til en av de mest velgjørende ansiktsbehandlingene.</p>
+    <p>Passer for deg som vil unne deg noe godt, eller som gave til noen som fortjener det.</p>
+    <div class="bd-fakta"><span><b>Anbefalt tid:</b> 40–60 min</span><span><b>Kombineres ofte med:</b> ansiktsoneterapi</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20Gua%20Sha.">Send SMS</a></div>
+  </div>
+</dialog>
+<dialog class="beh-dialog" id="d-ore">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/oreakupunktur.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Punktvis</span>
+    <h3>Øreakupunktur</h3>
+    <p>Ørets soner stimuleres med tynne engangsnåler. Det høres kanskje voldsomt ut, men de fleste kjenner bare et lite stikk — og så en behagelig ro. Audhild tok videreutdannelse i akupressur i 2024.</p>
+    <p>Bestilles sjelden alene — den gjør seg best i kombinasjon med fotsoneterapi i samme time, uten tillegg i prisen.</p>
+    <div class="bd-fakta"><span><b>Anbefalt:</b> i kombinasjon</span><span><b>Kombineres ofte med:</b> fotsoneterapi</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20time%20med%20%C3%B8reakupunktur.">Send SMS</a></div>
+  </div>
+</dialog>
+<dialog class="beh-dialog" id="d-kopping">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/kopping.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Sirkulasjon</span>
+    <h3>Kopping</h3>
+    <p>Kopper settes på huden og løsner forsiktig i vevet — det kjennes som et dypt, behagelig drag i muskulaturen. Audhild bruker skånsom kopping, og merker etter behandlingen er normalt og forsvinner etter noen dager. Utdannelse fra Axelsons i 2022.</p>
+    <p>Passer for deg med stiv rygg og skuldre som vil ha noe annet enn vanlig massasje.</p>
+    <div class="bd-fakta"><span><b>Anbefalt tid:</b> 40–60 min</span><span><b>Kombineres ofte med:</b> velværemassasje</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20kopping.">Send SMS</a></div>
+  </div>
+</dialog>
+<dialog class="beh-dialog" id="d-chakra">
+  <button class="bd-lukk" aria-label="Lukk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="bd-bilde"><img src="images/chakra-healing.jpg" alt=""></div>
+  <div class="bd-innhold">
+    <span class="beh-tag">Energi</span>
+    <h3>Chakra healing</h3>
+    <p>En stille time der kroppens energipunkter møtes med varme hender — healing slik Audhild har praktisert det siden Reiki-utdannelsen i 2011, der det hele startet for henne.</p>
+    <p>Passer for deg som ønsker hvile på et dypere plan, uten trykk eller massasje.</p>
+    <div class="bd-fakta"><span><b>Anbefalt tid:</b> 60–80 min</span><span><b>Kombineres ofte med:</b> kraniosakral terapi</span></div>
+    <div class="bd-bunn"><a class="knapp" href="tel:+4797347942">Bestill time</a><a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20chakra%20healing.">Send SMS</a></div>
+  </div>
+</dialog>
+
+<!-- ============ SONE-PRIKKNAV ============ -->
+<nav class="dotnav" aria-label="Seksjonsnavigasjon">
+  <a href="#topp" data-sek="topp"><span>Til toppen</span></a>
+  <a href="#behandlinger" data-sek="behandlinger"><span>Behandlinger</span></a>
+  <a href="#entime" data-sek="entime"><span>Første gang</span></a>
+  <a href="#priser" data-sek="priser"><span>Priser</span></a>
+  <a href="#gavekort" data-sek="gavekort"><span>Gavekort</span></a>
+  <a href="#terapeuten" data-sek="terapeuten"><span>Terapeuten</span></a>
+  <a href="#naturterapi" data-sek="naturterapi"><span>Naturterapi</span></a>
+  <a href="#beroring" data-sek="beroring"><span>Virkninger</span></a>
+  <a href="#sporsmal" data-sek="sporsmal"><span>Spørsmål</span></a>
+  <a href="#kontakt" data-sek="kontakt"><span>Kontakt</span></a>
+</nav>
+
+<!-- ============ STICKY MOBIL-CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="knapp" href="tel:+4797347942">Ring nå</a>
+  <a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20time%20hos%20Via%20SONER.">Send SMS</a>
+</div>
+
 <script>
 (function(){
   var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -946,6 +1229,51 @@ a.k-rad:hover{background:var(--blush)}
       });
     }, {threshold:.1});
     videoer.forEach(function(v){ vio.observe(v); });
+  }
+
+  /* Reveal ved scroll */
+  var rio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('inn'); rio.unobserve(e.target); } });
+  }, {threshold:.1, rootMargin:'0px 0px -30px'});
+  document.querySelectorAll('.rv').forEach(function(el){ rio.observe(el); });
+
+  /* Behandlingsdialoger */
+  document.querySelectorAll('[data-dialog]').forEach(function(kort){
+    var aapne = function(){
+      var d = document.getElementById(kort.getAttribute('data-dialog'));
+      if(d && d.showModal){ d.showModal(); }
+    };
+    kort.addEventListener('click', aapne);
+    kort.addEventListener('keydown', function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); aapne(); }
+    });
+  });
+  document.querySelectorAll('dialog.beh-dialog').forEach(function(d){
+    d.querySelector('.bd-lukk').addEventListener('click', function(){ d.close(); });
+    d.addEventListener('click', function(e){ if(e.target === d) d.close(); });
+  });
+
+  /* Sone-prikknav: aktiv seksjon */
+  var prikker = Array.prototype.slice.call(document.querySelectorAll('.dotnav a'));
+  var sekIds = prikker.map(function(a){ return a.getAttribute('data-sek'); });
+  var sio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        var id = e.target.id;
+        prikker.forEach(function(a){ a.classList.toggle('aktiv', a.getAttribute('data-sek') === id); });
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  sekIds.forEach(function(id){ var el = document.getElementById(id); if(el) sio.observe(el); });
+
+  /* Sticky mobil-CTA etter hero */
+  var sticky = document.getElementById('stickyCta');
+  var hero = document.getElementById('topp');
+  if(sticky && hero){
+    var hio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ sticky.classList.toggle('vis', !e.isIntersecting); });
+    }, {threshold:.05});
+    hio.observe(hero);
   }
 })();
 </script>
