@@ -592,6 +592,42 @@ dialog.beh-dialog::backdrop{background:rgba(59,46,53,.45);backdrop-filter:blur(3
 .sticky-cta.vis{transform:none}
 .sticky-cta .knapp{flex:1;padding:13px 10px;font-size:.92rem;justify-content:center}
 @media (max-width:820px){.sticky-cta{display:flex}}
+
+/* ============ BESTILLINGSVEIVISER ============ */
+dialog.bestill{
+  border:none;border-radius:18px;padding:0;max-width:600px;width:calc(100% - 32px);
+  margin:auto;max-height:calc(100vh - 40px);overflow:auto;
+  background:var(--krem);color:var(--tekst);box-shadow:0 30px 80px -20px rgba(59,46,53,.5);
+}
+dialog.bestill::backdrop{background:rgba(59,46,53,.45);backdrop-filter:blur(3px)}
+.bv-hode{background:var(--plomme);color:var(--krem);padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:2}
+.bv-hode h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.5rem;color:#fff}
+.bv-hode p{color:rgba(250,245,238,.75);font-size:.82rem;margin-top:2px}
+.bv-hode a{color:var(--rose-lys)}
+.bv-lukk{flex:none;width:36px;height:36px;border-radius:50%;background:rgba(250,245,238,.15);border:none;cursor:pointer;color:var(--krem);display:grid;place-items:center;transition:background var(--fart)}
+.bv-lukk:hover{background:rgba(250,245,238,.3)}
+.bv-kropp{padding:24px 28px 28px}
+.bv-steg{margin-bottom:22px}
+.bv-steg .l{display:flex;align-items:baseline;gap:10px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-dyp);margin-bottom:10px}
+.bv-steg .l .n{width:22px;height:22px;border-radius:50%;background:var(--rose);color:var(--krem);display:grid;place-items:center;font-size:.68rem;flex:none;align-self:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  border:1.5px solid var(--kant);background:#FCF8F2;border-radius:999px;
+  padding:9px 16px;font-family:'Karla',sans-serif;font-size:.86rem;font-weight:600;color:var(--tekst-dus);
+  cursor:pointer;transition:all var(--fart);
+}
+.chip:hover{border-color:var(--rose-lys);color:var(--tekst)}
+.chip[aria-pressed="true"]{background:var(--rose);border-color:var(--rose);color:var(--krem)}
+.chip small{font-weight:400;opacity:.85}
+.bv-navn{width:100%;border:1.5px solid var(--kant);background:#FCF8F2;border-radius:12px;padding:12px 16px;font-family:'Karla',sans-serif;font-size:.95rem;color:var(--tekst)}
+.bv-navn:focus{outline:2.5px solid var(--rose);outline-offset:1px;border-color:var(--rose)}
+.bv-sammendrag{background:var(--blush);border-radius:12px;padding:14px 18px;font-size:.9rem;color:var(--tekst-dus);margin-bottom:18px}
+.bv-sammendrag b{color:var(--rose-dyp)}
+.bv-handling{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.bv-handling .knapp{flex:1;min-width:200px;justify-content:center}
+.bv-alt{font-size:.82rem;color:var(--tekst-dus);width:100%;text-align:center;margin-top:4px}
+.bv-alt a{color:var(--rose-dyp);font-weight:700}
+@media (max-width:560px){.bv-kropp{padding:20px 18px 24px}.bv-hode{padding:18px 18px}}
 </style>
 </head>
 <body>
@@ -618,7 +654,7 @@ dialog.beh-dialog::backdrop{background:rgba(59,46,53,.45);backdrop-filter:blur(3
         <li><a href="#sporsmal">Spørsmål</a></li>
         <li><a href="blogg.html">Blogg</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
-        <li><a class="knapp nav-cta" href="tel:+4797347942">Bestill time</a></li>
+        <li><a class="knapp nav-cta aapne-bestill" href="tel:+4797347942">Bestill time</a></li>
       </ul>
     </nav>
     <button class="meny-knapp" id="menyKnapp" aria-label="Åpne meny" aria-expanded="false">
@@ -1148,6 +1184,60 @@ dialog.beh-dialog::backdrop{background:rgba(59,46,53,.45);backdrop-filter:blur(3
   </div>
 </dialog>
 
+<!-- ============ BESTILLINGSVEIVISER ============ -->
+<dialog class="bestill" id="bestillDialog">
+  <div class="bv-hode">
+    <div>
+      <h3>Bestill time</h3>
+      <p>Tre raske valg — så er meldingen klar. Eller <a href="tel:+4797347942">ring 973 47 942</a>.</p>
+    </div>
+    <button class="bv-lukk" aria-label="Lukk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="bv-kropp">
+    <div class="bv-steg">
+      <span class="l"><span class="n">1</span>Hva ønsker du?</span>
+      <div class="chips" id="bvBeh">
+        <button class="chip" data-v="Fotsoneterapi" data-min="60" aria-pressed="false">Fotsoneterapi</button>
+        <button class="chip" data-v="Ansiktsoneterapi" data-min="60" aria-pressed="false">Ansiktsoneterapi</button>
+        <button class="chip" data-v="Velværemassasje" data-min="80" aria-pressed="false">Velværemassasje</button>
+        <button class="chip" data-v="Kraniosakral terapi" data-min="60" aria-pressed="false">Kraniosakral</button>
+        <button class="chip" data-v="Gua Sha ansikt" data-min="60" aria-pressed="false">Gua Sha</button>
+        <button class="chip" data-v="Øreakupunktur (i kombinasjon)" data-min="60" aria-pressed="false">Øreakupunktur</button>
+        <button class="chip" data-v="Kopping" data-min="60" aria-pressed="false">Kopping</button>
+        <button class="chip" data-v="Chakra healing" data-min="80" aria-pressed="false">Chakra healing</button>
+        <button class="chip" data-v="usikker" data-min="60" aria-pressed="false">Usikker — hjelp meg velge</button>
+      </div>
+    </div>
+    <div class="bv-steg">
+      <span class="l"><span class="n">2</span>Hvor lenge?</span>
+      <div class="chips" id="bvTid">
+        <button class="chip" data-v="40" data-pris="600" aria-pressed="false">40 min <small>· 600 kr</small></button>
+        <button class="chip" data-v="60" data-pris="800" aria-pressed="false">60 min <small>· 800 kr</small></button>
+        <button class="chip" data-v="80" data-pris="1000" aria-pressed="false">80 min <small>· 1000 kr</small></button>
+      </div>
+    </div>
+    <div class="bv-steg">
+      <span class="l"><span class="n">3</span>Når passer det? <small style="letter-spacing:0;text-transform:none;font-weight:400">(velg gjerne flere)</small></span>
+      <div class="chips" id="bvNaar">
+        <button class="chip" data-v="hverdag på dagtid" aria-pressed="false">Hverdag dagtid</button>
+        <button class="chip" data-v="hverdag på kveld" aria-pressed="false">Hverdag kveld</button>
+        <button class="chip" data-v="helg på dagtid" aria-pressed="false">Helg dagtid</button>
+        <button class="chip" data-v="helg på kveld" aria-pressed="false">Helg kveld</button>
+      </div>
+    </div>
+    <div class="bv-steg">
+      <span class="l"><span class="n">4</span>Navnet ditt <small style="letter-spacing:0;text-transform:none;font-weight:400">(valgfritt)</small></span>
+      <input class="bv-navn" id="bvNavn" type="text" autocomplete="name" placeholder="F.eks. Kari">
+    </div>
+    <div class="bv-sammendrag" id="bvSammendrag">Velg behandling og varighet, så skriver vi meldingen for deg.</div>
+    <div class="bv-handling">
+      <a class="knapp" id="bvSend" href="sms:+4797347942">Åpne SMS — klar til å sende</a>
+      <a class="knapp hul" href="tel:+4797347942">Ring heller</a>
+      <span class="bv-alt">Audhild svarer med forslag til tidspunkt — timen er ikke bekreftet før hun har svart.</span>
+    </div>
+  </div>
+</dialog>
+
 <!-- ============ SONE-PRIKKNAV ============ -->
 <nav class="dotnav" aria-label="Seksjonsnavigasjon">
   <a href="#topp" data-sek="topp"><span>Til toppen</span></a>
@@ -1165,7 +1255,7 @@ dialog.beh-dialog::backdrop{background:rgba(59,46,53,.45);backdrop-filter:blur(3
 <!-- ============ STICKY MOBIL-CTA ============ -->
 <div class="sticky-cta" id="stickyCta">
   <a class="knapp" href="tel:+4797347942">Ring nå</a>
-  <a class="knapp hul" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20time%20hos%20Via%20SONER.">Send SMS</a>
+  <a class="knapp hul aapne-bestill" href="sms:+4797347942?&body=Hei%20Audhild%21%20Jeg%20vil%20gjerne%20bestille%20time%20hos%20Via%20SONER.">Bestill time</a>
 </div>
 
 <script>
@@ -1267,6 +1357,73 @@ dialog.beh-dialog::backdrop{background:rgba(59,46,53,.45);backdrop-filter:blur(3
     });
   }, {rootMargin:'-40% 0px -55% 0px'});
   sekIds.forEach(function(id){ var el = document.getElementById(id); if(el) sio.observe(el); });
+
+  /* Bestillingsveiviser */
+  var bd = document.getElementById('bestillDialog');
+  if(bd && bd.showModal){
+    var valg = {beh:null, min:null, pris:null, naar:[]};
+    var oppdater = function(){
+      var s = document.getElementById('bvSammendrag');
+      var send = document.getElementById('bvSend');
+      if(!valg.beh || !valg.min){
+        s.innerHTML = 'Velg behandling og varighet, så skriver vi meldingen for deg.';
+      } else {
+        var behTekst = valg.beh === 'usikker' ? 'Audhild hjelper deg å velge behandling' : valg.beh;
+        var naarTekst = valg.naar.length ? valg.naar.join(', ') : 'ikke valgt ennå';
+        s.innerHTML = '<b>' + behTekst + '</b> · ' + valg.min + ' min (' + valg.pris + ' kr) · Passer best: <b>' + naarTekst + '</b>';
+      }
+      var navn = document.getElementById('bvNavn').value.trim();
+      var melding;
+      if(valg.beh === 'usikker'){
+        melding = 'Hei Audhild! Jeg vil gjerne bestille time (' + (valg.min||'60') + ' min), men er usikker på hvilken behandling som passer - kan du hjelpe meg a velge?';
+      } else if(valg.beh){
+        melding = 'Hei Audhild! Jeg vil gjerne bestille: ' + valg.beh + ', ' + (valg.min||'60') + ' min (' + (valg.pris||'800') + ' kr).';
+      } else {
+        melding = 'Hei Audhild! Jeg vil gjerne bestille time hos Via SONER.';
+      }
+      if(valg.naar.length) melding += ' Det passer best ' + valg.naar.join(' eller ') + '.';
+      if(navn) melding += ' Mvh ' + navn;
+      send.href = 'sms:+4797347942?&body=' + encodeURIComponent(melding);
+    };
+    var enkeltvalg = function(gruppeId, felt){
+      document.querySelectorAll('#' + gruppeId + ' .chip').forEach(function(c){
+        c.addEventListener('click', function(){
+          document.querySelectorAll('#' + gruppeId + ' .chip').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+          c.setAttribute('aria-pressed','true');
+          valg[felt] = c.getAttribute('data-v');
+          if(felt === 'beh'){
+            var anbefalt = c.getAttribute('data-min');
+            document.querySelectorAll('#bvTid .chip').forEach(function(t){
+              var aktiv = t.getAttribute('data-v') === anbefalt;
+              t.setAttribute('aria-pressed', aktiv ? 'true' : 'false');
+              if(aktiv){ valg.min = t.getAttribute('data-v'); valg.pris = t.getAttribute('data-pris'); }
+            });
+          }
+          if(felt === 'min'){ valg.pris = c.getAttribute('data-pris'); }
+          oppdater();
+        });
+      });
+    };
+    enkeltvalg('bvBeh','beh');
+    enkeltvalg('bvTid','min');
+    document.querySelectorAll('#bvNaar .chip').forEach(function(c){
+      c.addEventListener('click', function(){
+        var p = c.getAttribute('aria-pressed') === 'true';
+        c.setAttribute('aria-pressed', p ? 'false' : 'true');
+        var v = c.getAttribute('data-v');
+        if(p){ valg.naar = valg.naar.filter(function(x){ return x !== v; }); }
+        else { valg.naar.push(v); }
+        oppdater();
+      });
+    });
+    document.getElementById('bvNavn').addEventListener('input', oppdater);
+    document.querySelectorAll('.aapne-bestill').forEach(function(k){
+      k.addEventListener('click', function(e){ e.preventDefault(); bd.showModal(); });
+    });
+    bd.querySelector('.bv-lukk').addEventListener('click', function(){ bd.close(); });
+    bd.addEventListener('click', function(e){ if(e.target === bd) bd.close(); });
+    oppdater();
+  }
 
   /* Sticky mobil-CTA etter hero */
   var sticky = document.getElementById('stickyCta');
